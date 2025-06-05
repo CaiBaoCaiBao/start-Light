@@ -1,0 +1,447 @@
+@import './assets.css';
+
+
+body {
+    background-color: var(--content-bg);
+    color: var(--text-color);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* 移动端顶部导航栏 */
+.mobile-header {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--sidebar-bg);
+    color: white;
+    height: var(--header-height);
+    padding: 0 20px;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    align-items: center;
+    justify-content: space-between;
+}
+
+.mobile-header .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.mobile-header .logo i {
+    color: #60a5fa;
+}
+
+.mobile-menu-btn {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* 侧边栏样式 */
+.sidebar {
+    width: var(--sidebar-width);
+    background: var(--sidebar-bg);
+    color: white;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    transition: var(--transition);
+}
+
+.sidebar-header {
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.logo i {
+    color: #60a5fa;
+}
+
+.nav-links {
+    padding: 20px 0;
+    flex-grow: 1;
+}
+
+.nav-links li {
+    list-style: none;
+    margin-bottom: 5px;
+}
+
+.nav-links a {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: var(--transition);
+    border-left: 3px solid transparent;
+}
+
+.nav-links a i {
+    margin-right: 12px;
+    width: 24px;
+    text-align: center;
+}
+
+.nav-links a:hover, 
+.nav-links a.active {
+    background: var(--sidebar-active);
+    color: white;
+    border-left: 3px solid var(--primary-color);
+}
+
+/* 主内容区域 */
+.main-content {
+    flex: 1;
+    margin-left: var(--sidebar-width);
+    padding: 20px;
+    min-height: 100vh;
+    transition: var(--transition);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.page-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--sidebar-bg);
+}
+
+/* 页面卡片样式 */
+.content-card {
+    background: var(--card-bg);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    padding: 25px;
+    margin-bottom: 25px;
+}
+
+.card-title {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    color: var(--sidebar-bg);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* 表单样式 */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.form-col {
+    flex: 1;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    border: none;
+    gap: 8px;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #1d4ed8;
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+}
+
+/* 无线网络列表 */
+.wifi-list {
+    max-height: 300px;
+    overflow-y: auto;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    margin-bottom: 25px;
+}
+
+.wifi-item {
+    padding: 15px;
+    border-bottom: 1px solid #f1f5f9;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.wifi-item:last-child {
+    border-bottom: none;
+}
+
+.wifi-item:hover {
+    background-color: #f1f5f9;
+}
+
+.wifi-item.active {
+    background-color: #dbeafe;
+    border-left: 3px solid var(--primary-color);
+}
+
+.wifi-icon {
+    font-size: 1.5rem;
+    margin-right: 15px;
+    color: var(--text-light);
+}
+
+.wifi-info {
+    flex: 1;
+}
+
+.wifi-name {
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.wifi-details {
+    display: flex;
+    gap: 15px;
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.wifi-strength {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.signal-bar {
+    height: 4px;
+    width: 20px;
+    background-color: #e2e8f0;
+    border-radius: 2px;
+}
+
+.signal-bar.active {
+    background-color: var(--success);
+}
+
+/* 关于系统页面样式 */
+.system-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.info-item:last-child {
+    border-bottom: none;
+}
+
+.info-label {
+    width: 120px;
+    font-weight: 600;
+    color: var(--text-light);
+}
+
+.info-value {
+    flex: 1;
+}
+
+.version-badge {
+    background: #dbeafe;
+    color: var(--primary-color);
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* 文件上传样式 */
+.file-upload {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.upload-area {
+    border: 2px dashed #cbd5e1;
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.upload-area:hover {
+    border-color: var(--primary-color);
+    background: #f0f9ff;
+}
+
+.upload-area i {
+    font-size: 3rem;
+    color: #cbd5e1;
+    margin-bottom: 15px;
+}
+
+.upload-area p {
+    color: var(--text-light);
+    margin-bottom: 10px;
+}
+
+.upload-btn {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: var(--transition);
+}
+
+.upload-btn:hover {
+    background: #1d4ed8;
+}
+
+.file-input {
+    display: none;
+}
+
+/* 建设中页面样式 */
+.construction {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+    gap: 20px;
+    text-align: center;
+    color: var(--text-light);
+}
+
+.construction i {
+    font-size: 4rem;
+    color: #cbd5e1;
+}
+
+
+
+/* 侧边栏遮罩层 */
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 99;
+    display: none;
+}
+
+.sidebar-overlay.active {
+    display: block;
+}
+
+/* 页脚样式 */
+.footer {
+    text-align: center;
+    padding: 20px;
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin-top: auto;
+}
+
+/* 状态消息 */
+.status-message {
+    padding: 15px;
+    border-radius: 6px;
+    margin: 15px 0;
+    display: none;
+}
+
+.status-success {
+    background-color: #dcfce7;
+    color: #166534;
+    border-left: 4px solid var(--success);
+}
+
+.status-error {
+    background-color: #fee2e2;
+    color: #b91c1c;
+    border-left: 4px solid var(--danger);
+}

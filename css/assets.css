@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+}
+
+:root {
+    --primary-color: #2563eb;
+    --sidebar-bg: #1e293b;
+    --sidebar-active: #334155;
+    --header-height: 60px;
+    --sidebar-width: 250px;
+    --content-bg: #f8fafc;
+    --card-bg: #ffffff;
+    --text-color: #334155;
+    --text-light: #64748b;
+    --success: #10b981;
+    --warning: #f59e0b;
+    --danger: #ef4444;
+    --transition: all 0.3s ease;
+}
